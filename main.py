@@ -15,10 +15,10 @@ def encrypt(message):
     for char in message.upper():
         if char in MORSE_CODE_DICT:
             morse_code_message.append(MORSE_CODE_DICT[char])
-            morse_code_message.append(' ')  # добавляем пробел после каждого символа Морзе
+            morse_code_message.append(' ')
         elif char == ' ':
             morse_code_message.append('/')
-            morse_code_message.append(' ')  # заменяем пробелы между словами на "/"
+            morse_code_message.append(' ')
     return ''.join(morse_code_message).strip()
 
 def decrypt(message):
