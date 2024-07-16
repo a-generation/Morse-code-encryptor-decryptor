@@ -1,7 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QTextEdit
 
-# Словарь для азбуки Морзе с добавлением кириллицы
 MORSE_CODE_DICT = {
     'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....', 'I': '..',
     'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.',
@@ -11,7 +10,6 @@ MORSE_CODE_DICT = {
     '(': '-.--.', ')': '-.--.-', ' ': '/'
 }
 
-# Функция для шифрования
 def encrypt(message):
     morse_code_message = []
     for char in message.upper():
@@ -23,7 +21,6 @@ def encrypt(message):
             morse_code_message.append(' ')  # заменяем пробелы между словами на "/"
     return ''.join(morse_code_message).strip()
 
-# Функция для дешифрования
 def decrypt(message):
     morse_code_dict_reversed = {value: key for key, value in MORSE_CODE_DICT.items()}
     words = message.split('/')
@@ -33,7 +30,6 @@ def decrypt(message):
         decoded_message.append(decoded_word)
     return ' '.join(decoded_message)
 
-# Основной класс приложения
 class MorseCodeApp(QWidget):
     def __init__(self):
         super().__init__()
